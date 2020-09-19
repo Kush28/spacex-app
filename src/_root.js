@@ -16,7 +16,7 @@ export default function Root({ title, main, state }) {
         </div>
       </body>
       <script dangerouslySetInnerHTML={{__html: `window.__STATE__= ${JSON.stringify(state)}`}} />
-      <script src="client.js" />
+      <script type="text/javascript" src="main.js" />
     </html>
   );
 }

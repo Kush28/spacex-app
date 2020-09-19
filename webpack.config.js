@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: "development",
   entry: {
-    client: "./src/client.js",
+    main: "./src/client.js",
     style: "./src/styles/index.scss"
   },
   plugins: [
