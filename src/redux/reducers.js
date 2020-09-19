@@ -1,19 +1,16 @@
-import { REQUEST_LAUNCHES,  RECEIVE_LAUNCHES } from './actions';
+import { REQUEST_LAUNCHES, RECEIVE_LAUNCHES } from './actions'
 
-function launches( state = {isFetching: false, launches: []}, action) {
+function reducer(state = { isFetching: false, payload: [] }, action) {
   switch (action.type) {
     case REQUEST_LAUNCHES:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
+      return { ...state, isFetching: true }
+
     case RECEIVE_LAUNCHES:
-      return Object.assign({}, state, {
-        isFetching: false,
-        launches: action.launches
-      });
+      return { ...state, isFetching: false, launches: action.payload }
+
     default:
       return state
   }
 }
 
-export default launches
+export default reducer

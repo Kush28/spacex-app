@@ -1,3 +1,3 @@
 module.exports = {
-  API_ENDPOINT: "https://api.spaceXdata.com/v3/launches?limit=100",
-};
+  API_ENDPOINT: 'https://api.spaceXdata.com/v3/launches?limit=100',
+}

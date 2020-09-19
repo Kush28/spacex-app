@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "concurrently \"webpack --watch\" \"nodemon server\"",
     "start": "node server",
-    "build": "webpack --mode=production"
+    "prebuild" : "npm run lint",
+    "build": "webpack --mode=production",
+    "lint": "eslint */**.js",
+    "lint:fix": "eslint */**/**.js --fix"
   },
   "author": "Kushal Mukherjee",
   "license": "MIT",
@@ -27,21 +30,27 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.3.0",
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^4.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
     "mini-css-extract-plugin": "^0.11.2",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
+    "prettier": "^2.1.2",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-node-externals": "^2.5.2"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "webpack-cli": "^3.3.11"
   },
   "browserslist": {
     "production": [

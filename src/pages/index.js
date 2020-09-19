@@ -1,47 +1,47 @@
-import React, { Component, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { fetchLaunches } from "../api/spacex";
-import { fetchLaunchesIfNeeded } from "../redux/actions";
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { fetchLaunchData } from '../api/spacex'
+import Filters from '../components/Filters/Filters'
+import { fetchLaunchesAction } from '../redux/actions'
 
-function App({ isFetching, launches, dispatch }) {
-  const totallaunches = launches.length;
-  const [count, setCount] = useState(0);
+function App({ isFetching, launches, refreshLaunchData }) {
+  const totallaunches = launches.length
 
   useEffect(() => {
-    dispatch(fetchLaunchesIfNeeded());
-    console.log("This is a test Client ", launches);
-  }, []);
+    // eslint-disable-next-line no-console
+    console.log('This is a test client ', launches)
+  }, [])
 
   return (
     <>
       <h1>SpaceX Launch Programs</h1>
-      <p>Testing Hydration</p>
-      <p>Count: {count}</p>
-      <button
-        onClick={() => {
-          console.log("Current count: ", count);
-          setCount(count + 1);
-        }}
-      >
-        Click
-      </button>
+      <p>
+        <button type="button" onClick={refreshLaunchData}>
+          Refresh Data
+        </button>
+      </p>
 
-      {isFetching && totallaunches === 0 && <h2>Loading...</h2>}
+      {isFetching && <h2>Loading...</h2>}
       {!isFetching && totallaunches === 0 && <h2>Empty.</h2>}
       {!isFetching && totallaunches !== 0 && <h2>Got data in console</h2>}
+
+      <Filters />
     </>
-  );
+  )
 }
 
 App.getProps = async () => {
-  const { data } = await fetchLaunches();
-  return { data };
-};
-
-function mapStateToProps({ isFetching, launches }) {
-  return {
-    isFetching,
-    launches,
-  };
+  const { data } = await fetchLaunchData()
+  return { data }
 }
-export default connect(mapStateToProps)(App);
+
+const mapDispatchToProps = (dispatch) => ({
+  refreshLaunchData: bindActionCreators(fetchLaunchesAction, dispatch),
+})
+
+const mapStateToProps = ({ isFetching, launches }) => ({
+  isFetching,
+  launches,
+})
+export default connect(mapStateToProps, mapDispatchToProps)(App)
