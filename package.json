@@ -1,0 +1,57 @@
+{
+  "name": "spacex-app",
+  "version": "1.0.0",
+  "description": "An application which would help users list and browse all launches by SpaceX program.",
+  "scripts": {
+    "dev": "concurrently \"webpack --watch\" \"nodemon server\"",
+    "start": "node server",
+    "build": "webpack --mode=production"
+  },
+  "author": "Kushal Mukherjee",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/register": "^7.8.6",
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "ignore-styles": "^5.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.3.0",
+    "copy-webpack-plugin": "^6.1.1",
+    "css-loader": "^4.3.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
