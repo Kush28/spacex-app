@@ -1,14 +1,68 @@
-$bgcolor: lightblue;
-$textcolor: darkblue;
-$fontsize: 18px;
+$bgcolor: rgb(238, 238, 238);
+$font-color: #333;
+$section-bgcolor: #fff;
+$section-radius: 10px;
+$breakpoint-tablet: 700px;
+$breakpoint-desktop: 1024px;
 
 body {
   background-color: $bgcolor;
-  color: $textcolor;
-  font-size: $fontsize;
-  font-family: "San Fransisco", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Helvatica Neue", Helvatica, sans-serif;
+  font-family: 'San Fransisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvatica Neue', Helvatica, sans-serif;
   font-size: 1rem;
   line-height: 1.65;
-  color: #333;
+  color: $font-color;
 }
+
+#app {
+  padding: 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@mixin flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin flex-row {
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  flex-direction: column;
+}
+
+@mixin filter-width {
+  width: 100%;
+  @media (min-width: $breakpoint-tablet) {
+    width: 33.33%;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: 20%;
+  }
+}
+
+@mixin card-wrapper-width {
+  width: 100%;
+  @media (min-width: $breakpoint-tablet) {
+    width: 66.66%;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: 80%;
+  }
+}
+
+@mixin card-width {
+  width: 100%;
+  @media (min-width: $breakpoint-tablet) {
+    width: 50%;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    width: 25%;
+  }
+}
+
+
+@import '../components/Card/Card.scss', '../components/Filters/Filters.scss',
+  '../components/Layout/Layout.scss', '../components/FilterButton/FilterButton.scss';

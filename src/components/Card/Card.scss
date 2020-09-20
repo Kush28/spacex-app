@@ -1,0 +1,43 @@
+.card-wrapper {
+  @include flex-container;
+  @include flex-row;
+  @include card-wrapper-width;
+}
+article {
+  @include card-width;
+  .card {
+    padding: 20px;
+    margin: 10px 0px 10px 0px;
+    background-color: $section-bgcolor;
+    border-radius: $section-radius;
+    min-height: 480px;
+    
+    @media (min-width: $breakpoint-tablet) {
+      margin: 0px 0px 10px 10px;
+    }
+  }
+
+  td,
+  tr,
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  img {
+    background-color: $bgcolor;
+  }
+
+  td {
+    padding: 5px;
+  }
+
+  h3,
+  td:nth-child(2) {
+    color: rgb(59, 59, 211);
+  }
+
+  td:first-child {
+    font-weight: bold;
+  }
+}

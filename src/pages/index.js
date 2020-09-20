@@ -1,47 +1,37 @@
-import React, { Component, useEffect, useState } from "react";
-import { connect } from "react-redux";
-import { fetchLaunches } from "../api/spacex";
-import { fetchLaunchesIfNeeded } from "../redux/actions";
+import React from 'react'
+import { connect } from 'react-redux'
+import { getQueryString } from '../helpers/query.helper'
+import { fetchLaunchData } from '../api/spacex'
+import Card from '../components/Card/Card'
+import Filters from '../components/Filters/Filters'
+import Layout from '../components/Layout/Layout'
 
-function App({ isFetching, launches, dispatch }) {
-  const totallaunches = launches.length;
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    dispatch(fetchLaunchesIfNeeded());
-    console.log("This is a test Client ", launches);
-  }, []);
+function App({ isFetching, launches, filters }) {
+  const totallaunches = launches.length
 
   return (
-    <>
-      <h1>SpaceX Launch Programs</h1>
-      <p>Testing Hydration</p>
-      <p>Count: {count}</p>
-      <button
-        onClick={() => {
-          console.log("Current count: ", count);
-          setCount(count + 1);
-        }}
-      >
-        Click
-      </button>
-
-      {isFetching && totallaunches === 0 && <h2>Loading...</h2>}
-      {!isFetching && totallaunches === 0 && <h2>Empty.</h2>}
-      {!isFetching && totallaunches !== 0 && <h2>Got data in console</h2>}
-    </>
-  );
+    <Layout>
+      <Filters filters={filters} />
+      <div className="card-wrapper">
+        {isFetching && <h3>Loading...</h3>}
+        {!isFetching && totallaunches === 0 && <h3>No Data available.</h3>}
+        {!isFetching &&
+          totallaunches !== 0 &&
+          launches.map((launchData) => <Card key={launchData.missionName} {...launchData} />)}
+      </div>
+    </Layout>
+  )
 }
 
-App.getProps = async () => {
-  const { data } = await fetchLaunches();
-  return { data };
-};
-
-function mapStateToProps({ isFetching, launches }) {
-  return {
-    isFetching,
-    launches,
-  };
+App.getProps = async ({ query }) => {
+  const data = await fetchLaunchData(getQueryString(query))
+  return { data }
 }
-export default connect(mapStateToProps)(App);
+
+const mapStateToProps = ({ isFetching, launches, filters }) => ({
+  isFetching,
+  launches,
+  filters,
+})
+
+export default connect(mapStateToProps)(App)

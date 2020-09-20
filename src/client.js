@@ -1,17 +1,17 @@
-import React from "react";
-import { hydrate } from "react-dom";
-import { Provider } from "react-redux";
-import configureStore from "./redux/configureStore";
-import Home from "./pages";
+import React from 'react'
+import { hydrate } from 'react-dom'
+import { Provider } from 'react-redux'
+import initStore from './redux'
+import Home from './pages'
 
-const state = window.__STATE__;
-delete window.__STATE__;
+const state = window.__STATE__
+delete window.__STATE__
 
-const store = configureStore(state);
+const store = initStore(state)
 
 hydrate(
   <Provider store={store}>
     <Home />
   </Provider>,
-  document.querySelector("#app")
-);
+  document.querySelector('#app'),
+)
