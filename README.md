@@ -43,5 +43,54 @@ An application which would help users list and browse all launches by SpaceX pro
 - Airbnb eslint config
 - Prettier
 
+## Approach
+
+Using `renderToString` API provided by `react-dom/server` to render the React application in Server side. The server rendered react app is then send to the browser using a `Express` server.
+
+The React app is again hydrated in client side after the server rendered html is fetched by the browser using `hydrate` API provided by `react-dom`.
+
+The server rendered state is added to the `window.__STATE__` object while being sent to the browser. On initial hydration the client uses the same state object to repopulate the store. This helps maintain sync between server state and client state.
+
+On applying filters in the client side the redux store is updated with filtered data and the URL is updated using `window.history.pushState`. Refreshing the browsers sends the applied filters to the server, where `req.query` object is parsed and Application is rendered using the filtered data and eventually sent to the browser.
+
+## Performance Optimizations
+
+**Webpack** - For a optimized production build, Bundling both Client code and Server code in a distribution directory. The server is then ran from the distribution directory.
+
+**Image** -  Using Cloudinary CDN for optimized WEBP images. Using[ cloudinary remote upload api](https://cloudinary.com/documentation/fetch_remote_images#auto_upload_remote_resources) to automatically upload images fetched from API response to cloudinary CDN.
+
+**Lazyload** - Lazyloading images using newly introduced [browser native lazy-loading](https://web.dev/native-lazy-loading/)
+
+**CLS** - Following guidelines on cumulative layout shift to achieve a perfect score of 0.
+
+**Server response time** - Optimizing server code using webpack to reduce initial server response time.
+
+## Instructions
+
+**Installation**
+Install the dependencies and devDependencies and start the server.
+```sh
+$ npm install
+```
+
+**Development**
+```sh
+$ npm run dev
+```
+
+**Production**
+For production build:
+```sh
+$ npm run build
+```
+Start production server
+```sh
+$ npm run start
+```
+
+---
+
+> Author: Kushal Mukherjee
+> [http://kushalm.dev/](http://kushalm.dev/)
 
 
