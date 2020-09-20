@@ -10,9 +10,9 @@ import { DOCTYPE } from '../src/constants'
 const app = express()
 const port = process.env.PORT || 3000
 
-app.use(express.static('./dist'))
-
 app.use(compression())
+
+app.use(express.static('./dist'))
 
 app.disable('x-powered-by')
 
