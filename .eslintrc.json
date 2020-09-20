@@ -8,6 +8,9 @@
     "sessionStorage": true,
     "document": true
   },
+  "env": {
+    "jest": true
+  },
   "rules": {
     "prettier/prettier": [
       "error",

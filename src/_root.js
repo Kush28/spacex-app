@@ -10,9 +10,7 @@ export default function Root({ title, main, state }) {
         <link rel="stylesheet" href="style.css" />
       </head>
       <body>
-        <div className="content">
-          <div id="app">{main}</div>
-        </div>
+        <div id="app">{main}</div>
       </body>
       <script
         dangerouslySetInnerHTML={{

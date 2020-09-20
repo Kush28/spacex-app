@@ -19,7 +19,7 @@ app.listen(port, () => console.log('########  App running on Port: ', port, ' ##
 
 // server rendered home page
 app.get('/', async (req, res) => {
-  const { main, serverSideState } = await ssr()
+  const { main, serverSideState } = await ssr({ query: req.query })
   const root = renderToString(<Root title="SpaceX App" state={serverSideState} main={main} />)
   res.send(root)
 })

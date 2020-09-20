@@ -1,0 +1,33 @@
+nav {
+  background-color: $section-bgcolor;
+  border-radius: $section-radius;
+  @include flex-container;
+  @include flex-column;
+  @include filter-width;
+  max-height: 800px;
+
+  .content {
+    text-align: center;
+  }
+
+  h2 {
+    margin: 5px 10px;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+  ul {
+    list-style: none;
+    padding: 10px 5px;
+    @include flex-container;
+    @include flex-row;
+
+    li {
+      text-align: center;
+      width: 50%;
+      padding-bottom: 10px;
+    }
+  }
+}

@@ -1,47 +1,37 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import { getQueryString } from '../helpers/query.helper'
 import { fetchLaunchData } from '../api/spacex'
+import Card from '../components/Card/Card'
 import Filters from '../components/Filters/Filters'
-import { fetchLaunchesAction } from '../redux/actions'
+import Layout from '../components/Layout/Layout'
 
-function App({ isFetching, launches, refreshLaunchData }) {
+function App({ isFetching, launches, filters }) {
   const totallaunches = launches.length
 
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('This is a test client ', launches)
-  }, [])
-
   return (
-    <>
-      <h1>SpaceX Launch Programs</h1>
-      <p>
-        <button type="button" onClick={refreshLaunchData}>
-          Refresh Data
-        </button>
-      </p>
-
-      {isFetching && <h2>Loading...</h2>}
-      {!isFetching && totallaunches === 0 && <h2>Empty.</h2>}
-      {!isFetching && totallaunches !== 0 && <h2>Got data in console</h2>}
-
-      <Filters />
-    </>
+    <Layout>
+      <Filters filters={filters} />
+      <div className="card-wrapper">
+        {isFetching && <h3>Loading...</h3>}
+        {!isFetching && totallaunches === 0 && <h3>No Data available.</h3>}
+        {!isFetching &&
+          totallaunches !== 0 &&
+          launches.map((launchData) => <Card key={launchData.missionName} {...launchData} />)}
+      </div>
+    </Layout>
   )
 }
 
-App.getProps = async () => {
-  const { data } = await fetchLaunchData()
+App.getProps = async ({ query }) => {
+  const data = await fetchLaunchData(getQueryString(query))
   return { data }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  refreshLaunchData: bindActionCreators(fetchLaunchesAction, dispatch),
-})
-
-const mapStateToProps = ({ isFetching, launches }) => ({
+const mapStateToProps = ({ isFetching, launches, filters }) => ({
   isFetching,
   launches,
+  filters,
 })
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default connect(mapStateToProps)(App)

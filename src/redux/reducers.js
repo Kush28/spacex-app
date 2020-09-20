@@ -1,12 +1,14 @@
 import { REQUEST_LAUNCHES, RECEIVE_LAUNCHES } from './actions'
 
-function reducer(state = { isFetching: false, payload: [] }, action) {
+const initialState = { isFetching: false, payload: [], filters: {} }
+
+function reducer(state = initialState, action) {
   switch (action.type) {
     case REQUEST_LAUNCHES:
-      return { ...state, isFetching: true }
+      return { ...state, isFetching: true, filters: action.filters }
 
     case RECEIVE_LAUNCHES:
-      return { ...state, isFetching: false, launches: action.payload }
+      return { ...state, isFetching: false, launches: action.payload, filters: action.filters }
 
     default:
       return state
