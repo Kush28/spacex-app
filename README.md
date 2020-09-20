@@ -24,7 +24,7 @@ Deployed URL : [https://spacex-launch-programs-kushal.herokuapp.com/](https://sp
 
 ![N|Solid](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png)
 
-### W3C Complaiance
+### W3C Compliance
 
 ![N|Solid](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
 
