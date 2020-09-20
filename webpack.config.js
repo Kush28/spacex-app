@@ -2,8 +2,9 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
+const nodeExternals = require('webpack-node-externals')
 
-module.exports = {
+const clientConfig = {
   mode: 'development',
   entry: {
     main: './src/client.js',
@@ -41,3 +42,36 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss'],
   },
 }
+
+const serverConfig = {
+  mode: 'development',
+  target: 'node',
+  node: {
+    __dirname: false,
+  },
+  externals: [nodeExternals()],
+  entry: {
+    'index.js': path.resolve(__dirname, 'server/app.js'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env', '@babel/react'],
+            plugins: ['@babel/plugin-transform-runtime'],
+          },
+        },
+      },
+    ],
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name]',
+  },
+}
+
+module.exports = [clientConfig, serverConfig]

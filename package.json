@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "An application which would help users list and browse all launches by SpaceX program.",
   "scripts": {
-    "dev": "concurrently \"webpack --watch\" \"nodemon server\"",
-    "start": "node server",
+    "dev": "concurrently \"webpack --watch\" \"nodemon dist\"",
+    "start": "node dist",
     "prebuild": "npm run lint && npm run test",
     "build": "webpack --mode=production",
     "lint": "eslint src/**/**.js",
@@ -58,6 +58,7 @@
     "style-loader": "^1.2.1",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^2.5.2",
     "workbox-webpack-plugin": "^5.1.4"
   },
   "browserslist": {

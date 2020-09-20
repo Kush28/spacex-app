@@ -15,7 +15,7 @@ const initialState = {
   },
 }
 
-module.exports = async function render({ query = {} }) {
+export default async function render({ query = {} }) {
   const { data } = await Home.getProps({ query })
   const store = initStore({
     ...initialState,
