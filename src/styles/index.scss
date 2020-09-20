@@ -2,8 +2,8 @@ $bgcolor: rgb(238, 238, 238);
 $font-color: #333;
 $section-bgcolor: #fff;
 $section-radius: 10px;
-$breakpoint-tablet: 700px;
-$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 701px;
+$breakpoint-desktop: 1025px;
 
 body {
   background-color: $bgcolor;
@@ -12,6 +12,11 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: $font-color;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 #app {

@@ -2,6 +2,10 @@
   @include flex-container;
   @include flex-row;
   @include card-wrapper-width;
+  .info {
+    text-align: center;
+    width: 100%;
+  }
 }
 article {
   @include card-width;

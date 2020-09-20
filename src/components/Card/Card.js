@@ -1,10 +1,17 @@
 import React from 'react'
+import cloudinaryUrl from '../../helpers/cloudinary.helper'
 
 function Card({ missionName, missionImage, missionIds, launchYear, launchSuccess, landSuccess }) {
   return (
     <article>
       <div className="card">
-        <img loading="lazy" src={missionImage} alt={missionName} width="100%" />
+        <img
+          loading="lazy"
+          src={cloudinaryUrl(missionImage, 200)}
+          alt={missionName}
+          height="400"
+          width="400"
+        />
         <h3>{missionName}</h3>
         <table>
           <tbody>
