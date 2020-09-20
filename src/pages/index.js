@@ -13,8 +13,8 @@ function App({ isFetching, launches, filters }) {
     <Layout>
       <Filters filters={filters} />
       <div className="card-wrapper">
-        {isFetching && <h3>Loading...</h3>}
-        {!isFetching && totallaunches === 0 && <h3>No Data available.</h3>}
+        {isFetching && <h3 className="info">Loading...</h3>}
+        {!isFetching && totallaunches === 0 && <h3 className="info">No Data available.</h3>}
         {!isFetching &&
           totallaunches !== 0 &&
           launches.map((launchData) => <Card key={launchData.missionName} {...launchData} />)}

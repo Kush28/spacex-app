@@ -11,12 +11,13 @@ function parseData(data) {
       if (rocket.first_stage.cores.length > 1) {
         landSuccess = !!rocket.first_stage.cores.find((core) => core.land_success === true)
       }
+
       return {
         missionName,
         missionImage,
         missionIds: mission_id,
         launchYear: launch_year,
-        launchSuccess: launch_success.toString(),
+        launchSuccess: launch_success !== null ? launch_success.toString() : 'null',
         landSuccess: landSuccess.toString(),
       }
     },

@@ -8,7 +8,10 @@ function Layout({ children }) {
       </header>
       <main>{children}</main>
       <footer>
-        <p>Developed by: Kushal</p>
+        <p>
+          <b>Developed by: </b>
+          Kushal
+        </p>
       </footer>
     </>
   )

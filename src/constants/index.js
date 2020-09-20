@@ -1,5 +1,11 @@
 module.exports = {
   API_ENDPOINT: 'https://api.spaceXdata.com/v3/launches?limit=100',
+  DOCTYPE: '<!DOCTYPE html>',
+  CLOUDINARY_URI: 'https://res.cloudinary.com/doxldod5y/image/upload/',
+  CLOUDINARY_FOLDER: 'spacex',
+  DUMMY_IMG:
+    'https://res.cloudinary.com/doxldod5y/image/upload/v1600619782/spacex/no-image_wnmh1m.png',
+  SPACEX_IMG_URI: 'https://images2.imgbox.com/',
   LAUNCH_YEARS: [
     '2006',
     '2007',

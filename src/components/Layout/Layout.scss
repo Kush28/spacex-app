@@ -2,3 +2,10 @@ main {
   @include flex-container;
   @include flex-row;
 }
+
+footer {
+  text-align: center;
+  p {
+    font-size: larger;
+  }
+}
