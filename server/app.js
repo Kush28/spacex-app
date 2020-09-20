@@ -9,12 +9,11 @@ import { DOCTYPE } from '../src/constants'
 
 const app = express()
 const port = process.env.PORT || 3000
+app.disable('x-powered-by')
 
 app.use(compression())
 
 app.use(express.static('./dist'))
-
-app.disable('x-powered-by')
 
 app.listen(port, () => console.log('########  App running on Port: ', port, ' ########'))
 
@@ -22,7 +21,7 @@ app.listen(port, () => console.log('########  App running on Port: ', port, ' ##
 app.get('/', async (req, res) => {
   const { main, serverSideState } = await ssr({ query: req.query })
   const root = renderToNodeStream(<Root state={serverSideState} main={main} />)
-  res.write(DOCTYPE);
+  res.write(DOCTYPE)
   root.pipe(res, { end: false })
   root.on('end', () => {
     res.end()

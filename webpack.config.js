@@ -1,6 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -15,6 +16,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [{ from: 'public', to: '.' }],
     }),
+    new WorkboxPlugin.GenerateSW(),
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
