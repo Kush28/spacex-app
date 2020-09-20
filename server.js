@@ -1,32 +1,27 @@
 /* eslint-disable no-console */
 import express from 'express'
 import React from 'react'
-import { renderToNodeStream } from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import compression from 'compression'
-import Root from '../src/_root'
-import ssr from '../src/server'
-import { DOCTYPE } from '../src/constants'
+import Root from './src/_root'
+import ssr from './src/server'
+import { DOCTYPE } from './src/constants'
 
 const app = express()
 const port = process.env.PORT || 3000
-
-app.use(express.static('./dist'))
+app.disable('x-powered-by')
 
 app.use(compression())
 
-app.disable('x-powered-by')
+app.use(express.static('./dist'))
 
 app.listen(port, () => console.log('########  App running on Port: ', port, ' ########'))
 
 // server rendered home page
 app.get('/', async (req, res) => {
   const { main, serverSideState } = await ssr({ query: req.query })
-  const root = renderToNodeStream(<Root state={serverSideState} main={main} />)
-  res.write(DOCTYPE);
-  root.pipe(res, { end: false })
-  root.on('end', () => {
-    res.end()
-  })
+  const root = renderToString(<Root title="SpaceX App" state={serverSideState} main={main} />)
+  res.send(DOCTYPE + root)
 })
 
 app.all('*', (req, res) => res.sendStatus(404))

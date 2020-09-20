@@ -15,3 +15,7 @@ hydrate(
   </Provider>,
   document.querySelector('#app'),
 )
+
+if ('serviceWorker' in window.navigator) {
+  window.navigator.serviceWorker.register('/service-worker.js')
+}
