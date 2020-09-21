@@ -18,49 +18,54 @@ function Filters({ filters, refreshLaunchData }) {
 
   return (
     <nav>
-      <h2>Filters</h2>
-      <div className="content">
-        <p>Launch year</p>
-        <hr />
-        <ul>
-          {launchYears.map((year) => (
-            <FilterButton
-              isActive={filters.year === year}
-              onClick={() => applyFilters({ year })}
-              key={year}
-            >
-              {year}
+      <div className="filter-wrapper">
+        <h2>Filters</h2>
+        <div className="content">
+          <p>Launch year</p>
+          <hr />
+          <ul>
+            {launchYears.map((year) => (
+              <FilterButton
+                isActive={filters.year === year}
+                onClick={() => applyFilters({ year })}
+                key={year}
+              >
+                {year}
+              </FilterButton>
+            ))}
+          </ul>
+
+          <p>Successful Launch</p>
+          <hr />
+          <ul>
+            <FilterButton isActive={filters.launch} onClick={() => applyFilters({ launch: true })}>
+              True
             </FilterButton>
-          ))}
-        </ul>
+            <FilterButton
+              isActive={filters.launch === false}
+              onClick={() => applyFilters({ launch: false })}
+            >
+              False
+            </FilterButton>
+          </ul>
 
-        <p>Successful Launch</p>
-        <hr />
-        <ul>
-          <FilterButton isActive={filters.launch} onClick={() => applyFilters({ launch: true })}>
-            True
-          </FilterButton>
-          <FilterButton
-            isActive={filters.launch === false}
-            onClick={() => applyFilters({ launch: false })}
-          >
-            False
-          </FilterButton>
-        </ul>
-
-        <p>Successful Landing</p>
-        <hr />
-        <ul>
-          <FilterButton isActive={filters.landing} onClick={() => applyFilters({ landing: true })}>
-            True
-          </FilterButton>
-          <FilterButton
-            isActive={filters.landing === false}
-            onClick={() => applyFilters({ landing: false })}
-          >
-            False
-          </FilterButton>
-        </ul>
+          <p>Successful Landing</p>
+          <hr />
+          <ul>
+            <FilterButton
+              isActive={filters.landing}
+              onClick={() => applyFilters({ landing: true })}
+            >
+              True
+            </FilterButton>
+            <FilterButton
+              isActive={filters.landing === false}
+              onClick={() => applyFilters({ landing: false })}
+            >
+              False
+            </FilterButton>
+          </ul>
+        </div>
       </div>
     </nav>
   )

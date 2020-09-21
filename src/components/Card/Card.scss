@@ -14,18 +14,18 @@ article {
     margin: 10px 0px 10px 0px;
     background-color: $section-bgcolor;
     border-radius: $section-radius;
-    min-height: 480px;
     
     @media (min-width: $breakpoint-tablet) {
       margin: 0px 0px 10px 10px;
+      min-height: 500px;
+    }
+    @media (min-width: $breakpoint-desktop) {
+      min-height: 470px;
     }
   }
 
-  td,
-  tr,
-  ul {
-    margin: 0px;
-    padding: 0px;
+  table{
+    font-size: 0.9rem;
   }
 
   img {
