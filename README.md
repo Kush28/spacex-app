@@ -24,7 +24,9 @@ Pagespeed             | Web Accessibility           | W3C Complaiance
 ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600639615/spacex/pagespeed_mobile_d7xk2i.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
 
 **Pagespeed insights Report**
+
 Mobile: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20mobile.pdf
+
 Desktop: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20desktop.pdf
 
 #### Lighthouse in Chrome
