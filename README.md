@@ -4,7 +4,9 @@ An application which would help users list and browse all launches by SpaceX pro
 
 Deployed URL : [https://spacex-launch-programs-kushal.herokuapp.com/](https://spacex-launch-programs-kushal.herokuapp.com/)
 
-[![N|Solid](https://spacex-launch-programs-kushal.herokuapp.com/assets/android-icon-96x96.png)](https://spacex-launch-programs-kushal.herokuapp.com/)
+Mobile             | Tablet           | Desktop
+:-------------------------:|:-------------------------: |:-------------------------:
+![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722071/spacex/mobile_jnrdgh.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722084/spacex/tablet_bwe5km.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722074/spacex/desktop_jtfmvg.png)
 
 ## Application features
 - Browse all launches by SpaceX Program.
@@ -12,21 +14,22 @@ Deployed URL : [https://spacex-launch-programs-kushal.herokuapp.com/](https://sp
 - Filter by successful/unsuccessful launches of the program.
 - Filter by successful/unsuccessful landing of the program.
 - A fully functional PWA application
-- Fast and reliable with [google lighthouse](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F) score of >95
+- Fast and reliable with [pagespeed insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F) score of >95
 - [W3C complainant](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F)
 - [WCAG 2.0 (level AA) verified](https://achecker.ca/checker/index.php)
  
-### Pagespeed
 
-![N|Solid](https://res.cloudinary.com/doxldod5y/image/upload/v1600639615/spacex/pagespeed_mobile_d7xk2i.png)
+Pagespeed             | Web Accessibility           | W3C Complaiance
+:-------------------------:|:-------------------------: |:-------------------------:
+![](https://res.cloudinary.com/doxldod5y/image/upload/v1600639615/spacex/pagespeed_mobile_d7xk2i.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
 
-### Web Accessibility
+**Pagespeed insights Report**
+Mobile: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20mobile.pdf
+Desktop: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20desktop.pdf
 
-![N|Solid](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png)
-
-### W3C Compliance
-
-![N|Solid](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
+#### Lighthouse in Chrome
+ ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722415/spacex/lighthouse_nfsg98.png)
+ Report: [https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf](https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf)
 
 ## Tech stack
 
@@ -70,6 +73,7 @@ On applying filters in the client side the redux store is updated with filtered 
 ## Instructions
 
 **Installation**
+
 Install the dependencies and devDependencies and start the server.
 ```sh
 $ npm install
@@ -81,11 +85,14 @@ $ npm run dev
 ```
 
 **Production**
-For production build:
+
+Production build
+
 ```sh
 $ npm run build
 ```
 Start production server
+
 ```sh
 $ npm run start
 ```
@@ -93,6 +100,6 @@ $ npm run start
 ---
 
 > Author: Kushal Mukherjee
-> [http://kushalm.dev/](http://kushalm.dev/)
+>[http://kushalm.dev/](http://kushalm.dev/)
 
 
