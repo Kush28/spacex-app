@@ -30,7 +30,7 @@ Mobile: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20mobile
 Desktop: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20desktop.pdf
 
 #### Lighthouse in Chrome
- ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722415/spacex/lighthouse_nfsg98.png)
+ ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600724196/spacex/lighthouse_pookkl.png)
  Report: [https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf](https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf)
 
 ## Tech stack
