@@ -7,7 +7,7 @@ function Card({ missionName, missionImage, missionIds, launchYear, launchSuccess
       <div className="card">
         <img
           loading="lazy"
-          src={cloudinaryUrl(missionImage, 200)}
+          src={cloudinaryUrl(missionImage, 300)}
           alt={missionName}
           height="400"
           width="400"

@@ -1,33 +1,45 @@
 nav {
-  background-color: $section-bgcolor;
-  border-radius: $section-radius;
-  @include flex-container;
-  @include flex-column;
   @include filter-width;
-  max-height: 800px;
 
-  .content {
-    text-align: center;
-  }
-
-  h2 {
-    margin: 5px 10px;
-  }
-
-  hr {
-    width: 80%;
-  }
-
-  ul {
-    list-style: none;
-    padding: 10px 5px;
+  .filter-wrapper {
+    background-color: $section-bgcolor;
+    border-radius: $section-radius;
     @include flex-container;
-    @include flex-row;
+    @include flex-column;
+    padding-bottom: 10px;
 
-    li {
+    @media (min-width: $breakpoint-tablet) {
+      position: sticky;
+      top: 10px;
+    }
+  
+    .content {
       text-align: center;
-      width: 50%;
-      padding-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0px 0px 0px;
+    }
+
+    h2 {
+      margin: 10px 0px 0px 25px;
+    }
+
+    hr {
+      width: 80%;
+    }
+
+    ul {
+      list-style: none;
+      margin: 10px 0px 0px 0px;
+      @include flex-container;
+      @include flex-row;
+
+      li {
+        text-align: center;
+        width: 50%;
+        padding-bottom: 10px;
+      }
     }
   }
 }
