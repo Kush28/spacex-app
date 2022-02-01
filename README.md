@@ -2,36 +2,7 @@
 
 An application which would help users list and browse all launches by SpaceX program.
 
-Deployed URL : [https://spacex-launch-programs-kushal.herokuapp.com/](https://spacex-launch-programs-kushal.herokuapp.com/)
-
-Mobile             | Tablet           | Desktop
-:-------------------------:|:-------------------------: |:-------------------------:
-![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722071/spacex/mobile_jnrdgh.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722084/spacex/tablet_bwe5km.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600722074/spacex/desktop_jtfmvg.png)
-
-## Application features
-- Browse all launches by SpaceX Program.
-- Filter by which year the launches took place.
-- Filter by successful/unsuccessful launches of the program.
-- Filter by successful/unsuccessful landing of the program.
-- A fully functional PWA application
-- Fast and reliable with [pagespeed insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F) score of >95
-- [W3C complainant](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F)
-- [WCAG 2.0 (level AA) verified](https://achecker.ca/checker/index.php)
- 
-
-Pagespeed             | Web Accessibility           | W3C Complaiance
-:-------------------------:|:-------------------------: |:-------------------------:
-![](https://res.cloudinary.com/doxldod5y/image/upload/v1600639615/spacex/pagespeed_mobile_d7xk2i.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
-
-**Pagespeed insights Report**
-
-Mobile: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20mobile.pdf
-
-Desktop: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20desktop.pdf
-
-#### Lighthouse in Chrome
- ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600724196/spacex/lighthouse_pookkl.png)
- Report: [https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf](https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf)
+Deployed URL : [https://spacex-app-kushal.herokuapp.com/](https://spacex-app-kushal.herokuapp.com/)
 
 ## Tech stack
 
@@ -98,6 +69,32 @@ Start production server
 ```sh
 $ npm run start
 ```
+
+## Application features
+- Browse all launches by SpaceX Program.
+- Filter by which year the launches took place.
+- Filter by successful/unsuccessful launches of the program.
+- Filter by successful/unsuccessful landing of the program.
+- A fully functional PWA application
+- Fast and reliable with [pagespeed insights](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F) score of >95
+- [W3C complainant](https://validator.w3.org/nu/?doc=https%3A%2F%2Fspacex-launch-programs-kushal.herokuapp.com%2F)
+- [WCAG 2.0 (level AA) verified](https://achecker.ca/checker/index.php)
+ 
+
+Pagespeed             | Web Accessibility           | W3C Complaiance
+:-------------------------:|:-------------------------: |:-------------------------:
+![](https://res.cloudinary.com/doxldod5y/image/upload/v1600639615/spacex/pagespeed_mobile_d7xk2i.png)  |  ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640025/spacex/accessibility_boti0e.png) | ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600640191/spacex/w3c_wd7nar.png)
+
+**Pagespeed insights Report**
+
+Mobile: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20mobile.pdf
+
+Desktop: https://github.com/Kush28/spacex-app/blob/master/docs/pagespeed%20desktop.pdf
+
+#### Lighthouse in Chrome
+ ![](https://res.cloudinary.com/doxldod5y/image/upload/v1600724196/spacex/lighthouse_pookkl.png)
+ Report: [https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf](https://github.com/Kush28/spacex-app/blob/master/docs/lighthouse%20report.pdf)
+
 
 ---
 
