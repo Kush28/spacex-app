@@ -2,6 +2,9 @@
   "name": "spacex-app",
   "version": "1.0.0",
   "description": "An application which would help users list and browse all launches by SpaceX program.",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "concurrently \"webpack --watch\" \"nodemon dist\"",
     "start": "node dist",
